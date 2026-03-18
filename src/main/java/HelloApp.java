@@ -1,15 +1,20 @@
-public class HelloApp{
+public class helloapp {
     public static void main(String[] args) {
-        // Check if arguments are passed
         if (args.length == 0) {
             // Default message
             System.out.println("Hello");
         } else {
-            // Display all arguments using enhanced for loop
-            System.out.println("Command-line arguments:");
+            // Build a string with delimiter (say, comma or space)
+            StringBuilder sb = new StringBuilder();
             for (String arg : args) {
-                System.out.println(arg);
+                sb.append(arg).append(",");  // add delimiter after each argument
             }
+
+            // Remove the trailing delimiter using substring
+            String result = sb.substring(0, sb.length() - 1);
+
+            // Display the final string
+            System.out.println("Arguments: " + result);
         }
     }
 }
