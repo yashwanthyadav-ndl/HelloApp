@@ -1,12 +1,15 @@
-public class HelloApp {
+public class HelloApp{
     public static void main(String[] args) {
-        // Print "Hello" first
-        System.out.println("Hello");
-
-        // Print all command-line arguments
-        System.out.println("Command-line arguments:");
-        for (int i = 0; i < args.length; i++) {
-            System.out.println("Argument " + (i + 1) + ": " + args[i]);
+        // Check if arguments are passed
+        if (args.length == 0) {
+            // Default message
+            System.out.println("Hello");
+        } else {
+            // Display all arguments using enhanced for loop
+            System.out.println("Command-line arguments:");
+            for (String arg : args) {
+                System.out.println(arg);
+            }
         }
     }
 }
