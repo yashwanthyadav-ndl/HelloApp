@@ -1,20 +1,12 @@
-public class helloapp {
+class HelloApp {
     public static void main(String[] args) {
-        if (args.length == 0) {
+        // If arguments are passed, join them with spaces
+        if (args.length > 0) {
+            String message = String.join(" ", args);
+            System.out.println(message);
+        } else {
             // Default message
             System.out.println("Hello");
-        } else {
-            // Build a string with delimiter (say, comma or space)
-            StringBuilder sb = new StringBuilder();
-            for (String arg : args) {
-                sb.append(arg).append(",");  // add delimiter after each argument
-            }
-
-            // Remove the trailing delimiter using substring
-            String result = sb.substring(0, sb.length() - 1);
-
-            // Display the final string
-            System.out.println("Arguments: " + result);
         }
     }
 }
